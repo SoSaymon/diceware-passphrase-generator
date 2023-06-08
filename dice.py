@@ -9,10 +9,9 @@ def generate_numbers(number_of_numbers=5):
         num = random.random()
         num *= 10
         num = round(num)
-        if num > 6:
+        if num > 6 or num < 1:
             continue
         num_arr.append(num)
-        print(num_arr)
         i += 1
     return num_arr
 
@@ -22,4 +21,4 @@ def concat_all_numbers(num_array):
 
 
 if __name__ == "__main__":
-    generate_numbers()
+    print(concat_all_numbers(generate_numbers()))
