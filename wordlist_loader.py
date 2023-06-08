@@ -26,3 +26,12 @@ def make_wordlist(wordlist):
     for i in range(len(wordlist)):
         dict_list.append(make_dict(wordlist[i]))
     return dict_list
+
+
+def main(filename):
+    tmp = load_wordlist(filename)
+    return make_wordlist(tmp)
+
+
+if __name__ == "__main__":
+    print(main("wordlist.txt"))
