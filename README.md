@@ -42,7 +42,7 @@ This command will generate a passphrase consisting of 6 random words from the de
 Please note that the security of your generated passphrase depends on the quality and randomness of the wordlist used. Use a trusted wordlist and ensure that it has enough entropy to provide adequate security.
 ## Contribution
 
-Contributions to the BMI Calculator are welcome! If you'd like to contribute, please follow these steps:
+Contributions to the Diceware Passphrase Generator are welcome! If you'd like to contribute, please follow these steps:
 
 1. Fork the repository.
 2. Create a new branch for your feature or bug fix.
