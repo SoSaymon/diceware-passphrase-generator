@@ -8,7 +8,8 @@ To use this tool, you need to have Python 3 installed on your system.
 
 ## Installation
 
-1. Clone the repository
+1. Download the code from the [release page](https://github.com/SoSaymon/diceware-passphrase-generator/releases/)
+2. Unzip the code
 
 ## Usage
 
