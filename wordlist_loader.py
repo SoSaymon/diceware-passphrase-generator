@@ -28,10 +28,6 @@ def make_wordlist(wordlist: list[str]) -> list[dict[str, str]]:
     return dict_list
 
 
-def main(filename: str) -> list[dict[str, str]]:
+def wordlist_maker(filename: str) -> list[dict[str, str]]:
     tmp = load_wordlist(filename)
     return make_wordlist(tmp)
-
-
-if __name__ == "__main__":
-    print(main("wordlist.txt"))

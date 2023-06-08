@@ -11,12 +11,9 @@ def interactive_cli() -> (int, str):
 
 
 def main():
-    parser = argparse.ArgumentParser(prog="diceware.py", usage="python3 %(prog)s [-h] [-w NUMBER OF WORDS] ["
-                                                               "--wordlist=wordlist.txt]", description="Passphrase "
-                                                                                                       "generator "
-                                                                                                       "based on "
-                                                                                                       "diceware "
-                                                                                                       "method")
+    parser = argparse.ArgumentParser(prog="diceware.py",
+                                    usage="python3 %(prog)s [-h] [-w NUMBER OF WORDS] [--wordlist=wordlist.txt]",
+                                    description="Passphrase generator based on diceware method")
     parser.add_argument("-w", "--words", type=int, help="Number of words in passphrase")
     parser.add_argument("--wordlist", type=str, default="wordlist.txt", help="Wordlist used to generate the passphrase")
 
@@ -29,7 +26,7 @@ def main():
         if wordlist == "":
             wordlist = "wordlist.txt"
 
-    passgen.main(number_of_words, wordlist)
+    passgen.passphrase_generation(number_of_words, wordlist)
 
 
 if __name__ == '__main__':

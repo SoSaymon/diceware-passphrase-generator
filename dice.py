@@ -18,9 +18,5 @@ def concat_all_numbers(num_array: list[int]) -> str:
     return ''.join(str(i) for i in num_array)
 
 
-def main(number_of_numbers=5) -> str:
+def generate_string_of_numbers(number_of_numbers=5) -> str:
     return concat_all_numbers(generate_numbers(number_of_numbers))
-
-
-if __name__ == "__main__":
-    print(main())
