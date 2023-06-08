@@ -2,14 +2,14 @@ def load_wordlist(file: str) -> list[str]:
     try:
         with open(file, 'r') as f:
             return f.readlines()
-    except FileNotFoundError:
-        print(f"File not found {file} {FileNotFoundError}")
-    except IOError:
-        print(f"IOError {IOError}")
+    except FileNotFoundError as e:
+        raise FileNotFoundError(f"File not found: {file}") from e
+    except IOError as e:
+        raise IOError(f"IOError occurred {e}") from e
     except Exception as e:
-        print(f"{e}")
+        raise Exception(f"An error occurred: {e}") from e
     finally:
-        f.close()
+        return []
 
 
 def make_dict(line: str) -> dict[str, str]:
@@ -29,5 +29,18 @@ def make_wordlist(wordlist: list[str]) -> list[dict[str, str]]:
 
 
 def wordlist_maker(filename: str) -> list[dict[str, str]]:
-    tmp = load_wordlist(filename)
-    return make_wordlist(tmp)
+    try:
+        wordlist = load_wordlist(filename)
+    except FileNotFoundError as e:
+        print(f"File not found: {filename}")
+        print("Using default wordlist")
+        wordlist = load_wordlist("wordlist.txt")
+    except IOError as e:
+        print(f"IOError occurred {e}")
+        print("Using default wordlist")
+        wordlist = load_wordlist("wordlist.txt")
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        print("Restart the program")
+        exit(1)
+    return make_wordlist(wordlist)
