@@ -2,7 +2,7 @@
 import random
 
 
-def generate_numbers(number_of_numbers=5):
+def generate_numbers(number_of_numbers=5) -> list[int]:
     num_arr = []
     i = 0
     while i < number_of_numbers:
@@ -16,7 +16,7 @@ def generate_numbers(number_of_numbers=5):
     return num_arr
 
 
-def concat_all_numbers(num_array):
+def concat_all_numbers(num_array: list[int]) -> str:
     return ''.join(str(i) for i in num_array)
 
 

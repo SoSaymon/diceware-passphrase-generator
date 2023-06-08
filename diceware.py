@@ -2,7 +2,7 @@ import passgen
 import argparse
 
 
-def interactive_cli():
+def interactive_cli() -> (int, str):
     print("Welcome in diceware generation program")
     number_of_words = int(input("How many words should the passphrase contain?\n"))
     wordlist = input("What wordlist do you want to use? Leave blank if you want to use the default one.")
