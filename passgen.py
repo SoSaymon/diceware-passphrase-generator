@@ -4,7 +4,7 @@ import wordlist_loader
 
 def find_index(wordlist: list[dict[str, str]], number: str) -> int:
     for index, element in enumerate(wordlist):
-        if isinstance(element, dict) and element.get("number") == number:
+        if element.get("number") == number:
             return index
 
     return -1
