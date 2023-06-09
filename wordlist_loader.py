@@ -8,8 +8,6 @@ def load_wordlist(file: str) -> list[str]:
         raise IOError(f"IOError occurred {e}") from e
     except Exception as e:
         raise Exception(f"An error occurred: {e}") from e
-    finally:
-        return []
 
 
 def make_dict(line: str) -> dict[str, str]:
