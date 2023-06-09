@@ -1,5 +1,5 @@
 import pytest
-from wordlist_loader import load_wordlist, make_dict, make_wordlist, wordlist_maker
+from wordlist_loader import load_wordlist, make_dict, make_wordlist, load_lines_from_file
 
 
 def test_load_wordlist():
@@ -19,7 +19,7 @@ def test_make_wordlist():
 
 
 def test_wordlist_maker():
-    assert wordlist_maker("test_wordlist.txt") == [
+    assert load_lines_from_file("test_wordlist.txt") == [
         {"number": "1", "word": "one"},
         {"number": "2", "word": "two"},
         {"number": "3", "word": "three"}
@@ -28,7 +28,7 @@ def test_wordlist_maker():
 
 def test_wordlist_maker_exceptions():
     with pytest.raises(FileNotFoundError):
-        wordlist_maker("nonexistent_file.txt")
+        load_lines_from_file("nonexistent_file.txt")
 
 
 def test_wordlist_loader():

@@ -16,7 +16,7 @@ def get_word(wordlist: list[dict[str, str]], index: int) -> str:
 
 
 def passphrase_generation(number_of_words: int, wordlist_name: str):
-    wordlist = wordlist_loader.wordlist_maker(wordlist_name)
+    wordlist = wordlist_loader.load_lines_from_file(wordlist_name)
     passphrase = ""
 
     for i in range(number_of_words):
