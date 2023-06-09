@@ -1,9 +1,9 @@
+import sys
 import pytest
-from wordlist_loader import load_wordlist, make_dict, make_wordlist, load_lines_from_file
+from wordlist_loader import make_dict, load_lines_from_file, make_wordlist
 
 
-def test_load_wordlist():
-    assert load_wordlist("test_wordlist.txt") == ['1   one\n', '2   two\n', '3   three']
+sys.path.append("/home/sosaymon/Projects/diceware-password-generator/")
 
 
 def test_make_dict():
@@ -18,8 +18,8 @@ def test_make_wordlist():
     ]
 
 
-def test_wordlist_maker():
-    assert load_lines_from_file("test_wordlist.txt") == [
+def test_load_lines_from():
+    assert load_lines_from_file("tests/test_wordlist.txt") == [
         {"number": "1", "word": "one"},
         {"number": "2", "word": "two"},
         {"number": "3", "word": "three"}
@@ -27,17 +27,5 @@ def test_wordlist_maker():
 
 
 def test_wordlist_maker_exceptions():
-    with pytest.raises(FileNotFoundError):
-        load_lines_from_file("nonexistent_file.txt")
-
-
-def test_wordlist_loader():
-    test_load_wordlist()
-    test_wordlist_maker_exceptions()
-    test_make_dict()
-    test_make_wordlist()
-    test_wordlist_maker()
-
-
-if __name__ == '__main__':
-    test_wordlist_loader()
+    with pytest.raises(SystemExit):
+        load_lines_from_file("tests/nonexistent_file.txt")

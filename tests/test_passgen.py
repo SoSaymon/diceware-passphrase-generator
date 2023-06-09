@@ -1,3 +1,7 @@
+import sys
+
+sys.path.append("/home/sosaymon/Projects/diceware-password-generator/")
+
 from passgen import find_index, get_word
 
 
@@ -15,12 +19,3 @@ def test_find_index():
 
 def test_get_word():
     assert get_word([{"word": "a"}], 0) == "a"
-
-
-def test_passgen():
-    test_find_index()
-    test_get_word()
-
-
-if __name__ == "__main__":
-    test_passgen()
