@@ -8,8 +8,36 @@ To use this tool, you need to have Python 3 installed on your system.
 
 ## Installation
 
-1. Download the code from the [release page](https://github.com/SoSaymon/diceware-passphrase-generator/releases/)
-2. Unzip the code
+### Source
+
+1. To install the tool from source, clone the repository.
+    ```bash
+    git clone https://github.com/SoSaymon/diceware-passphrase-generator.git
+    ```
+2. You can also download the repository as a ZIP file and extract it.
+
+### Releases
+
+1. Download the latest release from the [releases page](https://github.com/SoSaymon/diceware-passphrase-generator/releases/latest).
+2. Extract the ZIP file.
+
+### Pip
+
+1. Install the tool using pip.
+    ```bash
+    pip install diceware-passphrase-generator
+    ```
+
+### Docker
+
+1. Pull the Docker image.
+    ```bash
+    docker pull sosaymon/diceware-passphrase-generator
+    ```
+2. Run the Docker container.
+    ```bash
+    docker run -it sosaymon/diceware-passphrase-generator
+    ```
 
 ## Usage
 
@@ -41,6 +69,7 @@ This command will generate a passphrase consisting of 6 random words from the de
 ## Disclaimer
 
 Please note that the security of your generated passphrase depends on the quality and randomness of the wordlist used. Use a trusted wordlist and ensure that it has enough entropy to provide adequate security.
+
 ## Contribution
 
 Contributions to the Diceware Passphrase Generator are welcome! If you'd like to contribute, please follow these steps:
